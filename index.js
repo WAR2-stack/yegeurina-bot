@@ -10,6 +10,7 @@ const {
   StringSelectMenuBuilder
 } = require('discord.js');
 
+const token = process.env.TOKEN;
 const clientId = '1475828957629644976';
 const guildId = '1256075997972009010';
 
