@@ -51,8 +51,8 @@ const commands = [
 
   new SlashCommandBuilder().setName('내전참가').setDescription('내전에 참가합니다'),
   new SlashCommandBuilder().setName('참가취소').setDescription('내전 참가를 취소합니다'),
-  new SlashCommandBuilder().setName('내전명단').setDescription('내전 참가자 명단'),
-  new SlashCommandBuilder().setName('내전팀짜기').setDescription('내전 팀짜기 결과'),
+  new SlashCommandBuilder().setName('내전명단').setDescription('현재 내전 참가자 명단을 보여줍니다.'),
+  new SlashCommandBuilder().setName('내전팀짜기').setDescription('내전 참가자를 대상으로 팀짜기를 수행합니다.'),
   new SlashCommandBuilder().setName('내전초기화').setDescription('내전 명단을 초기화합니다')
 
 ].map(cmd => cmd.toJSON());
