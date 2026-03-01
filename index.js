@@ -23,6 +23,7 @@ const client = new Client({
 });
 
 const participants = new Map();
+const resetTimers = new Map();
 
 
 // =======================
@@ -151,6 +152,25 @@ client.on('interactionCreate', async interaction => {
       const team2Names = team2.map(id =>
         interaction.guild.members.cache.get(id)?.displayName
       );
+
+
+// 기존 타이머가 있으면 제거
+if (resetTimers.has(channelId)) {
+  clearTimeout(resetTimers.get(channelId));
+}
+
+// 1시간 후 자동 초기화
+const timer = setTimeout(() => {
+  const channelParticipants = participants.get(channelId);
+  if (channelParticipants) {
+    channelParticipants.clear();
+    console.log(`⏱ ${channelId} 채널 내전 자동 초기화 완료`);
+  }
+  resetTimers.delete(channelId);
+}, 60 * 60 * 1000); // 1시간
+
+resetTimers.set(channelId, timer);
+
 
       return interaction.reply(
         `🔵 1팀\n${team1Names.join(', ')}\n\n🔴 2팀\n${team2Names.join(', ')}`
