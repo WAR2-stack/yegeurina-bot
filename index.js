@@ -127,7 +127,7 @@ client.on('interactionCreate', async interaction => {
       );
 
       return interaction.reply(
-        `📢 현재 내전 명단\n인원(${channelParticipants.size}) : ${names.join(', ') || '없음'}`
+        `📢 현재 내전 명단\n인원(${channelParticipants.size})\n- ${names.join(\n) || '없음'}`
       );
     }
 
@@ -173,14 +173,14 @@ resetTimers.set(channelId, timer);
 
 
       return interaction.reply(
-        `🔵 1팀\n${team1Names.join(', ')}\n\n🔴 2팀\n${team2Names.join(', ')}`
+        `=== Company ===\n- ${team1Names.join(', ')}\n\n=== Union ===\n- ${team2Names.join(', ')}`
       );
     }
 
     if (interaction.commandName === '내전초기화') {
 
       channelParticipants.clear();
-
+ 
       return interaction.reply('🗑 현재 채널 내전 명단이 초기화되었습니다.');
     }
 
