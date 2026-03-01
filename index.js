@@ -116,7 +116,7 @@ client.on('interactionCreate', async interaction => {
       );
 
       return interaction.reply(
-        `❌ 참가 취소 - ${userName}\n현재 인원(${channelParticipants.size}) : ${names.join(', ') || '없음'}`
+        `❌ 참가 취소 - ${userName}\n현재 인원(${channelParticipants.size})\n- ${names.join('\n- ') || '없음'}`
       );
     }
 
@@ -127,7 +127,7 @@ client.on('interactionCreate', async interaction => {
       );
 
       return interaction.reply(
-        `📢 현재 내전 명단\n인원(${channelParticipants.size})\n- ${names.join('\n') || '없음'}`
+        `📢 현재 내전 명단\n인원(${channelParticipants.size})\n- ${names.join('\n- ') || '없음'}`
       );
     }
 
@@ -173,7 +173,7 @@ resetTimers.set(channelId, timer);
 
 
       return interaction.reply(
-        `=== Company ===\n- ${team1Names.join(', ')}\n\n=== Union ===\n- ${team2Names.join(', ')}`
+        `=== Company ===\n- ${team1Names.join('\n- ')}\n\n=== Union ===\n- ${team2Names.join('\n- ')}`
       );
     }
 
