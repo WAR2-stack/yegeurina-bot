@@ -127,7 +127,7 @@ client.on('interactionCreate', async interaction => {
       );
 
       return interaction.reply(
-        `📢 현재 내전 명단\n인원(${channelParticipants.size})\n- ${names.join(\n) || '없음'}`
+        `📢 현재 내전 명단\n인원(${channelParticipants.size})\n- ${names.join('\n') || '없음'}`
       );
     }
 
